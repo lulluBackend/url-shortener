@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const linkRoutes = require("./routes/linkRoutes");
 
 const express = require("express");
@@ -22,3 +24,7 @@ app.get("/", (req, res) => {
 app.listen(5000, () => {
   console.log("Servidor rodando na porta 5000");
 });
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("Mongo conectado"))
+  .catch(err => console.error("Erro ao conectar:", err));
