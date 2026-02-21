@@ -1,30 +1,31 @@
-require('dotenv').config();
-
-const linkRoutes = require("./routes/linkRoutes");
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const linkRoutes = require("./routes/linkRoutes");
+
 const app = express();
 
+// ===== MIDDLEWARES =====
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/api", linkRoutes);
 
-mongoose.connect("mongodb+srv://lulluPk_db_user:LDA7sTrAGxnaP5MK@cluster0.2uqh5ft.mongodb.net/urlshortener?retryWrites=true&w=majority")
-  .then(() => console.log("Mongo conectado"))
-  .catch(err => console.log(err));
+// ===== ROTAS =====
+app.use("/api", linkRoutes);
 
 app.get("/", (req, res) => {
   res.send("API rodando");
 });
 
-app.listen(5000, () => {
-  console.log("Servidor rodando na porta 5000");
-});
-
+// ===== CONEXÃO MONGO (APENAS VIA .ENV) =====
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("Mongo conectado"))
   .catch(err => console.error("Erro ao conectar:", err));
+
+// ===== START SERVER =====
+app.listen(5000, () => {
+  console.log("Servidor rodando na porta 5000");
+});
