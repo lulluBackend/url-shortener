@@ -1,0 +1,27 @@
+{
+  "name": "url-shortener-backend",
+  "version": "1.0.0",
+  "description": "Backend do projeto Encurtador de Links feito com Node.js, Express e MongoDB",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "url-shortener",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "mongoose": "^9.2.1",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
