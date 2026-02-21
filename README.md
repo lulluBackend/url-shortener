@@ -110,6 +110,16 @@ ou simplesmente abrir `index.html`.
 
 ---
 
+## 🔗 Como testar localmente
+
+1. Clone o repositório  
+2. Entre na pasta backend e rode `npm install`  
+3. Crie `.env` com MONGO_URI  
+4. Rode `npm run dev`  
+5. Abra frontend/index.html no navegador  
+
+---
+
 # 🌐 Exemplo de uso
 
 1. Inserir URL
