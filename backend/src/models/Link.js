@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 const linkSchema = new mongoose.Schema({
-  originalUrl: {
-    type: String,
-    required: true
-  },
+originalUrl: {
+  type: String,
+  required: true,
+  unique: true
+},
   shortCode: {
     type: String,
     required: true,

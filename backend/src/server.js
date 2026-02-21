@@ -13,10 +13,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", linkRoutes);
 
-mongoose.connect("mongodb+srv://lulluPk_db_user:LDA7sTrAGxnaP5MK@cluster0.2uqh5ft.mongodb.net/urlshortener?retryWrites=true&w=majority")
-  .then(() => console.log("Mongo conectado"))
-  .catch(err => console.log(err));
-
 app.get("/", (req, res) => {
   res.send("API rodando");
 });
