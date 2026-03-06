@@ -2,7 +2,7 @@
 
 Projeto Fullstack de encurtador de URLs simples desenvolvido com Node.js, Express e MySQL.
 Este projeto foi criado com fins de estudo e para testar umas coisas aí.
-Dessa vez não possui ORM.
+Desta vez não possui ORM.
 
 ---
 
